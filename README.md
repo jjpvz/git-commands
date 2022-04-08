@@ -18,9 +18,17 @@
 `$ git add -p #stage hunk` or \
 `$ git add -p <filename> #stage hunk from particular file`
 
-### See What is Still Unstaged
-`$ git diff` or \
-`$ git diff --cached #see what has been staged so far`
+>Note following is only relevant for editing hunks:
+-- press e
+-- delete with 'delete key'
+-- insert with 'insert key'
+-- escape insert-mode with 'esc key'
+-- quit with :q!
+-- save and quit with :wq 
+
+### Show Difference Working Directory and Index
+`$ git diff #shows what needs to be staged` or \
+`$ git diff --cached #shows what has been staged so far`
 
 ### Save Changes to Local
 `$ git commit -m "<commit message>"`
