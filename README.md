@@ -14,7 +14,9 @@
 
 ### Add Precisely This Content to the Next Commit
 `$ git add . #add everything` or \
-`$ git add <filename> #add particular file`
+`$ git add <filename> #add particular file` or \
+`$ git add -p #stage hunk` or \
+`$ git add -p <filename> #stage hunk from particular file`
 
 ### See What is Still Unstaged
 `$ git diff` or \
@@ -63,3 +65,24 @@ $ git config --global alias.st status
 
 $ git config --global alias.unstage 'reset HEAD --'
 ```
+
+## Branching
+### List Branches
+`$ git branch`
+
+### Create Branch
+`$ git branch <newbranchname>`
+
+### Switch to Existing Branch
+`$ git checkout <branchname>` or \
+`$ git switch <branchname>`
+
+### Create and Switch to New Branch
+`$ git checkout -b <newbranchname>` or \
+`$ git switch -c <newbranchname>`
+
+### Return to Previously Checked Out Branch
+`$ git switch -`
+
+### Change Branchname
+`$ git branch -M <newbranchname>`
