@@ -23,3 +23,32 @@
 ### Save Changes to Local
 `$ git commit -m "<commit message>"`
 
+## Viewing the Commit History
+### List the Commits Made in Repository in Reverse Chronological Order
+`$ git log` or \
+`$ git log -p #shows difference introduced in each commit` or \
+`$ git log --oneline #prints each commit on a single line` or \
+`$ git log --graph #adds a nice little ASCII graph showing your branch and merge history`
+
+## Undoing Things
+### Redo a Commit on Local 
+`$ git commit --amend #don't do this for pushed commits` :heavy_exclamation_mark: 
+
+### Unstaging a Staged File
+`$ git reset HEAD <file> #git status reminds us` or \
+`$ git restore --staged <file>`
+
+### Discard Changes in Working Directory
+
+`$ git checkout -- <file> #git status reminds us` :heavy_exclamation_mark:
+`$ git restore <file>` :heavy_exclamation_mark:
+
+>Stashing and branching are generally better ways to go
+
+## Tagging
+
+### Listing Your Tags
+`$ git tag`
+
+>More on this later
+
