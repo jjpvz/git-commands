@@ -34,7 +34,6 @@
 `$ git commit -m "<commit message>"`
 
 ## Stashing
-
 ### Stash the Changes in a Dirty Working Directory Away
 `$ git stash #saves your local modifications away and reverts the working directory to match the HEAD commit`
 
@@ -78,25 +77,6 @@
 
 >Stashing and branching are generally better ways to go
 
-## Tagging
-
-### Listing Your Tags
-`$ git tag`
-
->More on this later
-
-## Git Aliases
-
-### Examples
-```
-$ git config --global alias.co checkout
-$ git config --global alias.br branch
-$ git config --global alias.ci commit
-$ git config --global alias.st status
-
-$ git config --global alias.unstage 'reset HEAD --'
-```
-
 ## Branching
 ### List Branches
 `$ git branch`
@@ -117,3 +97,30 @@ $ git config --global alias.unstage 'reset HEAD --'
 
 ### Change Branchname
 `$ git branch -M <newbranchname>`
+
+### Get Branch From Remote on Local
+First,
+
+`$ git fetch --all #fetch all branches` or \
+`$ git fetch origin <branchname> #fetch this one branch`
+
+and then,
+
+`git switch <branchname> #move to branch`
+
+## Tagging
+### Listing Your Tags
+`$ git tag`
+
+>Coming soon
+
+## Git Aliases
+### Examples
+```
+$ git config --global alias.co checkout
+$ git config --global alias.br branch
+$ git config --global alias.ci commit
+$ git config --global alias.st status
+
+$ git config --global alias.unstage 'reset HEAD --'
+```
