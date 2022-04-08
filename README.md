@@ -33,6 +33,29 @@
 ### Save Changes to Local
 `$ git commit -m "<commit message>"`
 
+## Stashing
+
+### Stash the Changes in a Dirty Working Directory Away
+`$ git stash #saves your local modifications away and reverts the working directory to match the HEAD commit`
+
+### List Modifications Stashed Away
+`$ git stash list`
+
+### Inspect Modifications Stashed Away
+`$ git stash show`
+
+### Remove Stash from List of Stashes in Repository
+`$ git stash drop <stash>`
+
+###  Apply Stash to Top of Current Working Directory and Remove From List of Stashes
+`$ git stash pop <stash>`
+
+### Apply Stash on Top of Current Working Directory Without Removing From List of Stashes
+`$ git stash apply <stash>`
+
+### Remove All Stashes From Repository
+`$ git stash clear`
+
 ## Viewing the Commit History
 ### List the Commits Made in Repository in Reverse Chronological Order
 `$ git log` or \
