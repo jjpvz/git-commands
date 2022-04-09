@@ -62,7 +62,46 @@
 `$ git log --oneline #prints each commit on a single line` or \
 `$ git log --graph #adds a nice little ASCII graph showing your branch and merge history`
 
+### Show Current Commit
+`$ git show`
+
 ## Undoing Things
+### Reset Branch Pointer to Point to a Different Commit
+`& git reset --hard HEAD #point to commit currently sitting on` or \
+`& git reset --hard HEAD^ #point to commit's parent` or \
+`& git reset --hard HEAD^^ #point to commit's grandparent`
+
+### Bring Updates in from another branch (rebase branch)
+First go to feature branch,
+`$ git switch <feature branchname>`
+
+and then rebase this branch on another branch,
+`$ git rebase <branchname>`
+
+and then in case of conflicts,
+`$ git status`
+
+fix conlicts and then,
+`$ git rebase --continue #when rebase conflicts have been resolved` or \
+`$ git rebase --abort #when having problems and want to start over or abort`
+
+and then in case of no conflicts check status,
+`$ git status #branches have diverged`
+
+and then,
+`$ git push #rejected`
+`$ git push -f #force push`
+
+### Move commit to another branch and delete commit from old branch
+First,
+`$ git show #show current commit`
+
+and then,
+`$ git switch <branch> #switch branches`
+
+and then,
+`$ git cherry-pick <commit hash> #commit hash shown when 'git show', make copy of commit`
+
 ### Redo a Commit on Local 
 `$ git commit --amend #don't do this for pushed commits` :heavy_exclamation_mark: or
 `$ git commit --amend -m "<new commit message>" #don't do this for pushed commits` :heavy_exclamation_mark:
