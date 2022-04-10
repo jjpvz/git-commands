@@ -151,7 +151,24 @@ and then,
 ### Listing Your Tags
 `$ git tag`
 
->Coming soon
+### Creating Annotated Tags
+`$ git tag -a <tagname> -m "<tag message>"`
+
+> Semantic Versioning = [major].[minor].[patch]-[build/beta/rc]
+
+### Tagging After the Fact
+`$ git tag -a <tagname> <commit hash>`
+
+### Sharing Tags
+`$ git push origin <tagname>` or \
+`$ git push origin --tags`
+
+### Deleting Tags
+`$ git tag -d <tagname> #local` or \
+`$ git push origin --delete <tagname> #remote`
+
+### Checking out Tags
+`$ git show <tagname>`
 
 ## Git Aliases
 ### Examples
