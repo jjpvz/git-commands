@@ -23,6 +23,7 @@
 -- delete with 'delete key'
 -- insert with 'insert key'
 -- escape insert-mode with 'esc key'
+-- delete whole line 'dd'
 -- quit with :q!
 -- save and quit with :wq 
 
@@ -35,7 +36,8 @@
 
 ## Stashing
 ### Stash the Changes in a Dirty Working Directory Away
-`$ git stash #saves your local modifications away and reverts the working directory to match the HEAD commit`
+`$ git stash #saves your local modifications away and reverts the working directory to match the HEAD commit` or \
+`$ git stash -m "<stash message>"`
 
 ### List Modifications Stashed Away
 `$ git stash list`
@@ -44,13 +46,13 @@
 `$ git stash show`
 
 ### Remove Stash from List of Stashes in Repository
-`$ git stash drop <stash>`
+`$ git stash drop <stashid>`
 
-###  Apply Stash to Top of Current Working Directory and Remove From List of Stashes
-`$ git stash pop <stash>`
+### Apply Stash to Top of Current Working Directory and Remove From List of Stashes
+`$ git stash pop <stashid>`
 
 ### Apply Stash on Top of Current Working Directory Without Removing From List of Stashes
-`$ git stash apply <stash>`
+`$ git stash apply <stashid>`
 
 ### Remove All Stashes From Repository
 `$ git stash clear`
@@ -103,16 +105,20 @@ and then,
 `$ git cherry-pick <commit hash> #commit hash shown when 'git show', make copy of commit`
 
 ### Redo a Commit on Local 
+First, 
+`$ git add <filename/ -p/ .>`
+
+and then, or skip first command and only edit commit message by doing,
 `$ git commit --amend #don't do this for pushed commits` :heavy_exclamation_mark: or
 `$ git commit --amend -m "<new commit message>" #don't do this for pushed commits` :heavy_exclamation_mark:
 
 ### Unstaging a Staged File
-`$ git reset HEAD <file> #git status reminds us` or \
 `$ git restore --staged <file> #git status reminds us`
 
 ### Discard Changes in Working Directory
 `$ git checkout -- <file> #git status reminds us` :heavy_exclamation_mark: or 
-`$ git restore <file> #git status reminds us` :heavy_exclamation_mark:
+`$ git restore <file> #git status reminds us` :heavy_exclamation_mark: or
+`$ git restore . #discard all changes in working directory and go back to last commit`
 
 >Stashing and branching are generally better ways to go
 
@@ -139,13 +145,11 @@ and then,
 
 ### Get Branch From Remote on Local
 First,
-
 `$ git fetch --all #fetch all branches` or \
 `$ git fetch origin <branchname> #fetch this one branch`
 
 and then,
-
-`git switch <branchname> #move to branch`
+`$ git switch <branchname> #move to branch`
 
 ## Tagging
 ### Listing Your Tags
@@ -180,3 +184,6 @@ $ git config --global alias.st status
 
 $ git config --global alias.unstage 'reset HEAD --'
 ```
+
+### Show All Commands and Command Aliases
+`$ git help -a #-a stands for --all`
